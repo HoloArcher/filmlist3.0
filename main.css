@@ -1,0 +1,105 @@
+html, body{
+	margin: 0;
+	
+	--moreinfo: 200px;
+	
+}
+
+.masonry{
+	display: flex;
+	flex-direction: row-reverse;
+	
+	flex-wrap: wrap-reverse;
+	padding-top: 50px;
+	justify-content: center;
+}
+
+.mel{
+	flex-grow: 1;
+	flex-basis: 300px;
+	max-width: 50%;
+	height: auto;
+}
+
+.mel input[type=button]{
+	background: darkred;
+	position: absolute;
+	border: 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	z-index: 2;
+	flex-grow: 1 ;
+}
+
+img{
+	pointer-events: none;
+	width: 100%;
+	max-width: 800px;
+	max-height: 100%;
+}
+
+/*mediaquerries*/
+
+.moreinfo{
+	min-width: 98%;
+	position: absolute;
+	height: 0%;
+	left: 0;
+	z-index: 4;
+	overflow: hidden;
+	background: no-repeat  ;
+	background-position: 100% 0px;
+	background-size: auto 100%;
+	/* background-attachment: fixed; */
+	padding: 0 1%;
+	box-shadow: inset 80vw 0 10vw -20vw #fff
+	
+}
+
+.moreinfo h1, .moreinfo p{
+	padding:  1% 5%;
+}
+
+.kek{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.moreinfo h1{
+	font-size: 3em;
+	font-family: monospace;
+}
+.moreinfo p{
+	font-size: 1.4em;
+	width: 60vw;
+	text-align: left;
+	padding: 0;
+	font-family: 'Times New Roman', Times, serif
+}
+
+
+.spacer{
+	margin: 0%;
+}
+
+/*
+ * MENU
+ */
+
+.menu{
+	height: auto;
+
+}
+
+.menu input[type=text]{
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+	margin: 0 5px;
+	padding: 0;
+	border: 1px solid gray;
+	height: 2em;
+}
+.menu input{
+	height: 2em;
+}

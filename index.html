@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>film list</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="jquery.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="kek">
+
+			<form v-on:submit="addel(request)" action="javascript:void(0);" class='menu' id="forminp">
+				<input type='text' v-model='request'>
+				<input type="button" value="add movie" v-on:click="addel(request)">
+
+			</form>
+			
+			<form action="javascript:void(0);" v-on:submit.prevent="refresh()" class='menu'> 
+
+				<label for="username" style=' margin-left: 100px; '>Username</label>
+				<input v-model='username' type="search" name="username" id="username">
+				<input type="button" value="change user" v-on:click="refresh()">
+			</form>
+		</div>
+
+
+		<div v-if='localdb != []'>
+			<div class="masonry">
+				<div class='mel' v-if='' v-for="d, i of localdb" v-bind:id='localdb[i].id' v-on:click='kek(localdb[i].id)'>
+
+					<input type="button" value="X" v-on:click="del(d,i)">
+
+					<img v-bind:src='"https://image.tmdb.org/t/p/original/" + localdb[i].poster_path'>
+					<div class="moreinfo" v-bind:style="{ 'background-image': 'url(' +' https://image.tmdb.org/t/p/original' + localdb[i].backdrop_path + ')', }">
+						<h1>{{ localdb[i].title }}</h1>
+						<p>{{ localdb[i].overview }} </p>
+					</div>
+					<div class="spacer"></div>
+				</div>
+			</div>
+		</div>
+		<div v-else></div>
+
+	</div>
+</body>
+<script src="Vuefire.js"></script>
+
+</html>
